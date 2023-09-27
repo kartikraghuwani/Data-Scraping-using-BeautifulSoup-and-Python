@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[58]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import html5lib
@@ -15,9 +9,6 @@ data = requests.get('https://www.imdb.com/chart/top/', headers=Headers)
 soup = BeautifulSoup(data.text, "html.parser")
 
 
-# In[8]:
-
-
 excel = openpyxl.Workbook()
 print(excel.sheetnames)
 sheet = excel.active
@@ -26,13 +17,7 @@ print(excel.sheetnames)
 sheet.append(['Movie Rank','Movie Name','Year','IMDB Rating'])
 
 
-# In[34]:
-
-
 Movies = soup.find('ul',class_='ipc-metadata-list ipc-metadata-list--dividers-between sc-3f13560f-0 sTTRj compact-list-view ipc-metadata-list--base').find_all('li')
-
-
-# In[56]:
 
 
 for Movie in Movies:
@@ -46,18 +31,9 @@ for Movie in Movies:
     ratings = Movie.find('span',class_='ipc-rating-star ipc-rating-star--base ipc-rating-star--imdb ratingGroup--imdb-rating').get_text()
     
     print(rank,merge,years,ratings)
-#     sheet.append([rank,merge,years,ratings])
+    sheet.append([rank,merge,years,ratings])
 
-# excel.save('IMDB Movie Ratings.xlsx')
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
+excel.save('IMDB Movie Ratings.xlsx')
 
 
 
