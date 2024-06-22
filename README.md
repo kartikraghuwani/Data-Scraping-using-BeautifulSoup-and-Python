@@ -3,6 +3,7 @@ In this project, I scraped IMDB Top 250 movie data, including movie_name, and ye
 
 In this project, I used Python, and BeautifulSoup for Scraping the data.
 
-![image](https://github.com/kartikraghuwani/Data-Scraping-using-BeautifulSoup-and-Python/assets/66105337/e660ac25-29fe-4eaf-b94e-26c4ce464147)
+![image](https://github.com/kartikraghuwani/Data-Scraping-using-BeautifulSoup-and-Python/assets/66105337/26872594-8f5a-4f15-9799-7da48f7c829a)
 
+You must install Selenium, BeautifulSoup(bs4) and some Python libraries such as Pandas and NumPy.
 
